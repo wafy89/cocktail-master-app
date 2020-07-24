@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/cocktail-master-app/static/css/main.3f252232.chunk.css",
+    "main.css": "/cocktail-master-app/static/css/main.dcc72c42.chunk.css",
     "main.js": "/cocktail-master-app/static/js/main.2c3e2904.chunk.js",
     "main.js.map": "/cocktail-master-app/static/js/main.2c3e2904.chunk.js.map",
     "runtime-main.js": "/cocktail-master-app/static/js/runtime-main.77b00589.js",
@@ -8,16 +8,16 @@
     "static/js/2.1fbb4bf0.chunk.js": "/cocktail-master-app/static/js/2.1fbb4bf0.chunk.js",
     "static/js/2.1fbb4bf0.chunk.js.map": "/cocktail-master-app/static/js/2.1fbb4bf0.chunk.js.map",
     "index.html": "/cocktail-master-app/index.html",
-    "precache-manifest.66a1c5b83296c1c26b164f7fbc46fdae.js": "/cocktail-master-app/precache-manifest.66a1c5b83296c1c26b164f7fbc46fdae.js",
+    "precache-manifest.a15e759c666daec8830a8a1f1e75cc80.js": "/cocktail-master-app/precache-manifest.a15e759c666daec8830a8a1f1e75cc80.js",
     "service-worker.js": "/cocktail-master-app/service-worker.js",
-    "static/css/main.3f252232.chunk.css.map": "/cocktail-master-app/static/css/main.3f252232.chunk.css.map",
+    "static/css/main.dcc72c42.chunk.css.map": "/cocktail-master-app/static/css/main.dcc72c42.chunk.css.map",
     "static/js/2.1fbb4bf0.chunk.js.LICENSE.txt": "/cocktail-master-app/static/js/2.1fbb4bf0.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/cocktail-master-app/static/media/multicolor-glass-cocktail-drinks-black-background-hd-wallpapers.1b35ed3a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.77b00589.js",
     "static/js/2.1fbb4bf0.chunk.js",
-    "static/css/main.3f252232.chunk.css",
+    "static/css/main.dcc72c42.chunk.css",
     "static/js/main.2c3e2904.chunk.js"
   ]
 }
