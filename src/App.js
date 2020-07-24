@@ -84,7 +84,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <BrowserRouter>
+        <BrowserRouter basename="/cocktail-master-app">
           <Route path="/">
             <SearchComponent
               saveRandomDrink={this.saveRandomDrink}
