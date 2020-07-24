@@ -19,23 +19,17 @@ export class SearchComponent extends Component {
             : "searchSection sOnly"
         }
       >
-        <button
+         <NavLink className="randomBTN " exact to="/favorite-list"><button
           className="randomBTN "
           onClick={() => this.props.saveRandomDrink()}
-        >
-          <NavLink exact to="/favorite-list">
-            {" "}
-            Favorites
-          </NavLink>
-        </button>
-        <button
-          className="randomBTN "
+        >Favorites List
+        </button></NavLink>
+         
+        <NavLink className="randomBTN " exact to="/random-result"><button
+          
           onClick={() => this.props.saveRandomDrink()}
-        >
-          <NavLink exact to="/random-result">
-            Random Cocktail
-          </NavLink>
-        </button>
+        >Random Cocktail
+        </button> </NavLink>
         <div className="searchFieldContainer">
           <select
             className="options"

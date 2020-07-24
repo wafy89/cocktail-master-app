@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "64fe8e783d906149efaed2336b48207b",
+    "revision": "6b32c8f4a0df934dea67d9b110bb0a09",
     "url": "/cocktail-master-app/index.html"
   },
   {
-    "revision": "202137511130bdffa56f",
-    "url": "/cocktail-master-app/static/css/main.cacd6ccf.chunk.css"
+    "revision": "43d87268dfb8a93b49bf",
+    "url": "/cocktail-master-app/static/css/main.06fb1a4b.chunk.css"
   },
   {
     "revision": "2510c77613de1dfd9b94",
@@ -16,15 +16,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cocktail-master-app/static/js/2.1fbb4bf0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "202137511130bdffa56f",
-    "url": "/cocktail-master-app/static/js/main.cb0f5d00.chunk.js"
+    "revision": "43d87268dfb8a93b49bf",
+    "url": "/cocktail-master-app/static/js/main.75230761.chunk.js"
   },
   {
     "revision": "7c5316852630b0b4bede",
     "url": "/cocktail-master-app/static/js/runtime-main.77b00589.js"
   },
   {
-    "revision": "1b35ed3a9f6ed3e9f77407087e568abb",
-    "url": "/cocktail-master-app/static/media/multicolor-glass-cocktail-drinks-black-background-hd-wallpapers.1b35ed3a.jpg"
+    "revision": "c20b4626ad33c4f38c1956cea598987c",
+    "url": "/cocktail-master-app/static/media/cocktail.c20b4626.jpg"
   }
 ]);

@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/cocktail-master-app/static/css/main.cacd6ccf.chunk.css",
-    "main.js": "/cocktail-master-app/static/js/main.cb0f5d00.chunk.js",
-    "main.js.map": "/cocktail-master-app/static/js/main.cb0f5d00.chunk.js.map",
+    "main.css": "/cocktail-master-app/static/css/main.06fb1a4b.chunk.css",
+    "main.js": "/cocktail-master-app/static/js/main.75230761.chunk.js",
+    "main.js.map": "/cocktail-master-app/static/js/main.75230761.chunk.js.map",
     "runtime-main.js": "/cocktail-master-app/static/js/runtime-main.77b00589.js",
     "runtime-main.js.map": "/cocktail-master-app/static/js/runtime-main.77b00589.js.map",
     "static/js/2.1fbb4bf0.chunk.js": "/cocktail-master-app/static/js/2.1fbb4bf0.chunk.js",
     "static/js/2.1fbb4bf0.chunk.js.map": "/cocktail-master-app/static/js/2.1fbb4bf0.chunk.js.map",
     "index.html": "/cocktail-master-app/index.html",
-    "precache-manifest.4cf0fa15398bae4419bd0080c32024f4.js": "/cocktail-master-app/precache-manifest.4cf0fa15398bae4419bd0080c32024f4.js",
+    "precache-manifest.a4f27ee2c3cf330bbc254eb4a368c3f8.js": "/cocktail-master-app/precache-manifest.a4f27ee2c3cf330bbc254eb4a368c3f8.js",
     "service-worker.js": "/cocktail-master-app/service-worker.js",
-    "static/css/main.cacd6ccf.chunk.css.map": "/cocktail-master-app/static/css/main.cacd6ccf.chunk.css.map",
+    "static/css/main.06fb1a4b.chunk.css.map": "/cocktail-master-app/static/css/main.06fb1a4b.chunk.css.map",
     "static/js/2.1fbb4bf0.chunk.js.LICENSE.txt": "/cocktail-master-app/static/js/2.1fbb4bf0.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/cocktail-master-app/static/media/multicolor-glass-cocktail-drinks-black-background-hd-wallpapers.1b35ed3a.jpg"
+    "static/media/App.scss": "/cocktail-master-app/static/media/cocktail.c20b4626.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.77b00589.js",
     "static/js/2.1fbb4bf0.chunk.js",
-    "static/css/main.cacd6ccf.chunk.css",
-    "static/js/main.cb0f5d00.chunk.js"
+    "static/css/main.06fb1a4b.chunk.css",
+    "static/js/main.75230761.chunk.js"
   ]
 }

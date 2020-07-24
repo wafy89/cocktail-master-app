@@ -10,10 +10,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: " 90%",
     margin: "auto",
-    marginTop: "11vh",
-    backgroundColor: " rgba(255, 255, 255, 0.95)",
-    minHeight: " 100vh",
-    paddingTop: "50px",
+    marginTop: "15vh",
+    backgroundColor: " rgba(0, 0, 0, 0.95)",
+    //minHeight: " 100vh",
+    paddingTop: "2rem",
     borderRadius: "5px",
     display: "flex",
     flexDirection: "row",
@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     margin: "1rem",
     marginTop: "0",
     backgroundColor: "transparent",
-
     paddingTop: "0",
     borderRadius: "0",
   },
@@ -36,18 +35,15 @@ function FavoriteList(props) {
   const classes = useStyles();
   return (
     <div className="ListContainer">
-      {props.favoriteList ? (
-        <Button
+      {props.favoriteList && <Button
           className="clearFavoriteBTN"
           variant="contained"
           color="secondary"
           onClick={props.clearFavorites}
         >
           CLEAR FAVORITES
-        </Button>
-      ) : (
-        ""
-      )}
+        </Button>}
+ 
       <Grid
         /* container justifyContent="center" */ className={classes.root}
         spacing={0}

@@ -10,10 +10,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: " 90%",
     margin: "auto",
-    marginTop: "12vh",
-    backgroundColor: " rgba(255, 255, 255, 0.95)",
-    minHeight: " 100vh",
-    paddingTop: "50px",
+    marginTop: "15vh",
+    backgroundColor: " rgba(0, 0, 0, 0.95)",
+    //minHeight: " 100vh",
+    paddingTop: "2rem",
     borderRadius: "5px",
     display: "flex",
     flexDirection: "row",
@@ -35,7 +35,7 @@ function RandomResult(props) {
   const classes = useStyles();
   return (
     <div className="ListContainer">
-      {props.randomList ? (
+    {props.randomList.length ? (
         <Button
           className="clearRandomBTN"
           variant="contained"
@@ -50,7 +50,7 @@ function RandomResult(props) {
       <Grid
         /* container justifyContent="center" */ className={classes.root}
         spacing={0}
-      >
+      >  
         {props.randomList.map((drink, index) => (
           <Grid className={classes.subRoot} xs={12} sm={12} md={4} lg={3}>
             <Drink

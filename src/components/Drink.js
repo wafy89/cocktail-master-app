@@ -20,7 +20,8 @@ import { ingredientsGenerator, getDataByID } from "../utils/functions";
 const useStyles = (theme) => ({
   root: {
     /* maxWidth: "90%", */
-    margin: "2% auto",
+    margin: "1rem  auto",
+    backgroundColor : "rgba(255,200,0,.8)"
   },
   media: {
     height: "100%",
