@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../images/logo.png';
 import SearchBar from '../components/SearchBar';
 import { useState } from 'react';
-function Navbar() {
+function Navbar({ favoritesLength }) {
 	const [navbar, setNavbar] = useState(false);
 	return (
 		<div className=" w-full bg-lime-100 p-2 flex items-center justify-between">
@@ -22,7 +22,7 @@ function Navbar() {
 					<li className="mx-4 md:m0 md:mb-2  relative md:inline-block">
 						<Link to={`/favorite`}>
 							<div className="absolute right-0   md:right-0 z-10 bg-pink-400/80 text-xs font-bold px-1 py-0.5 rounded-sm">
-								3
+								{favoritesLength}
 							</div>
 							<svg
 								className="h-9  sm:h-12 lg:h-16 p-2 text-gray-500 hover:text-pink-600 svg-inline--fa fa-heart fa-w-16 fa-9x"
