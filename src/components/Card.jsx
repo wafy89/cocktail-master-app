@@ -5,13 +5,13 @@ import { isInFavorite } from '../utils/helper';
 function Card({ drink }) {
 	const { favoriteList, toggleFavorite } = React.useContext(Store);
 	return (
-		<div>
-			<div className=" w-96 mx-auto rounded-md bg-gray-800 shadow-lg">
+		<div className="m-4">
+			<div className=" w-96 h-[28rem] mx-auto rounded-md bg-primary shadow-lg flex flex-col justify-between">
 				<div className="px-4 leading-none ">
 					<div className="flex justify-start gap-4 ">
 						<div
 							alt="pic"
-							className="w-2/3  bg-auto overflow-hidden bg-no-repeat bg-center  rounded-md shadow-2xl  transform -translate-y-4 border-4 border-gray-300"
+							className="w-2/3  bg-auto overflow-hidden bg-no-repeat bg-center  rounded-md shadow-2xl  transform -translate-y-4 border-4 border-bright-1"
 						>
 							<img
 								src={drink.thumbnail}
@@ -19,7 +19,7 @@ function Card({ drink }) {
 								className="block w-min"
 							/>
 						</div>
-						<ul className="text-start py-2 italic text-slate-200">
+						<ul className="text-start py-2 italic text-slate-800">
 							{drink.ingridients &&
 								drink.ingridients.map((item, i) => (
 									<li
@@ -32,13 +32,13 @@ function Card({ drink }) {
 						</ul>
 					</div>
 
-					<div className="flex-col text-gray-300">
+					<div className="flex-col text-slate-800">
 						<p className="pt-4 text-2xl font-bold">{drink.name}</p>
 						<hr
 							className="hr-text"
 							data-content=""
 						/>
-						<div className="text-md flex justify-between px-4 my-2">
+						<div className="text-md flex justify-between  px-4 my-2">
 							<span className="font-bold">
 								ID: {drink.id} | {drink.drinkType}
 							</span>
@@ -50,17 +50,18 @@ function Card({ drink }) {
 							downward spiral of revolution and bloody crime. This path brings
 							him face-to-face with his alter-ego: the Joker.{' '}
 						</p> */}
-
-						<p className="flex text-md px-4 my-2">
-							{drink.category}
-							<span className="font-bold px-2">|</span>
-							{drink.glassType}
-						</p>
+						{drink.category && (
+							<p className="flex text-md px-4 my-2">
+								{drink.category}
+								<span className="font-bold px-2">|</span>
+								{drink.glassType}
+							</p>
+						)}
 
 						{/* <p>ICON BTNS</p> */}
 					</div>
 				</div>
-				<div className="flex justify-between items-center px-4 mb-4 w-full">
+				<div className="flex justify-between items-center px-4 mb-4  w-full">
 					<svg
 						onClick={() => toggleFavorite(drink)}
 						className={`${
@@ -84,7 +85,7 @@ function Card({ drink }) {
 					<div className="text-xs">
 						<button
 							type="button"
-							className="border border-gray-400 text-gray-400 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-900 focus:outline-none focus:shadow-outline"
+							className="border border-slate-800 text-slate-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-slate-400 focus:outline-none focus:shadow-outline"
 						>
 							DETAILS
 						</button>

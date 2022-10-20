@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import Grid from '../components/Grid';
 
 import { fetchData } from '../utils/api';
 function SearchResult() {
 	const [drinkList, setDrinkList] = useState([]);
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams] = useSearchParams();
 	useEffect(() => {
 		const searchBy = searchParams.get('searchBy');
 		const searchText = searchParams.get('searchText');
@@ -15,8 +16,16 @@ function SearchResult() {
 	return (
 		<div>
 			result
-			{drinkList?.length &&
-				drinkList.map((item) => <h2 key={item.id}>{item.id}</h2>)}
+			<Grid drinks={drinkList} />
+			{/* <div className="flex justify-around gap-6 w-full flex-wrap">
+				{drinkList?.length &&
+					drinkList.map((item) => (
+						<Card
+							key={item.id}
+							drink={item}
+						/>
+					))}
+			</div> */}
 		</div>
 	);
 }

@@ -12,11 +12,11 @@ import {
 	saveFavoritesToLocalstorage,
 } from './utils/helper';
 import { Store } from './utils/store';
-
 function App() {
-	let drinks = JSON.parse(window.localStorage.getItem('favoriteDrinks'));
-
-	const [favorite, setFavorite] = useState(drinks);
+	//initialize favorite state with local Storage value
+	const initialFavorites = () =>
+		JSON.parse(window.localStorage.getItem('favoriteDrinks')) || [];
+	const [favorite, setFavorite] = useState(initialFavorites);
 
 	const toggleFavorite = (drink) => {
 		if (favorite.some((item) => item.id === drink.id)) {
@@ -29,21 +29,25 @@ function App() {
 
 	const saveToStorage = () => {
 		const drinks = JSON.stringify(favorite);
+		console.log('saveToStorage', drinks);
 		window.localStorage.setItem('favoriteDrinks', drinks);
 	};
-
+	// save to lockal Storage with every change on favorites
 	useEffect(() => {
-		return function () {
-			console.log('done');
-			saveToStorage();
-		};
-	}, []);
+		saveToStorage();
+	}, [favorite]);
+
+	//App theme
+	const [theme, setTheme] = useState('theme-first');
 
 	return (
 		<Store.Provider value={{ favoriteList: favorite, toggleFavorite }}>
-			<div className="App bg-green-100/30">
-				<Navbar favoritesLength={favorite.length} />
-				<div className="min-h-screen  pt-2">
+			<div className={`${theme} 'App bg-secondary`}>
+				<Navbar
+					setTheme={setTheme}
+					favoritesLength={favorite.length}
+				/>
+				<div className="min-h-screen  pt-44 md:pt-28">
 					<Routes>
 						<Route
 							path="/"

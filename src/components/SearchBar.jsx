@@ -24,11 +24,11 @@ function SearchBar() {
 					handelSearch();
 				}
 			}}
-			className="overflow-hidden  z-0 rounded-full relative p-3 flex-1 max-w-prose mx-auto"
+			className="overflow-hidden  z-0 rounded-full w-full relative p-2 flex-grow-1 max-w-xl mx-auto"
 		>
-			<div className="relative flex z-50 overflow-hidden bg-white rounded-full">
+			<div className="relative flex z-40 overflow-hidden bg-primary rounded-full">
 				<select
-					className="bg-transparent rounded-full z-1 transform ease-linear duration-200 h-full hover:bg-slate-500/30 hover:shadow-md outline-none absolute text-slate-700  font-semibold -left-28 hover:left-0 mr-1 pr-1"
+					className="bg-transparent rounded-full z-1 transform ease-linear duration-200 h-full hover:bg-slate-500/30 hover:shadow-md outline-none  text-slate-700  font-semibold absolute -left-28 hover:left-0 lg:left-0 xl:left-0 mr-1 pr-1"
 					onChange={(evt) => setSearchBy(evt.target.value)}
 					value={searchBy}
 				>
@@ -41,20 +41,21 @@ function SearchBar() {
 					required
 					type="text"
 					placeholder="enter your search "
-					className="rounded-full flex-1 px-6 py-4 text-gray-700 focus:outline-none text-center"
+					className="rounded-full flex-1 px-6  bg-primary py-4 text-gray-700 focus:outline-none text-center"
 				/>
 				<button
 					onClick={handelSearch}
-					className="bg-blue-500 text-white rounded-full font-semibold px-8 py-4 hover:bg-indigo-400 focus:bg-indigo-600 focus:outline-none"
+					className="bg-bright-1 text-white z-50 transform ease-linear duration-200 rounded-full font-semibold px-8 py-4  absolute -right-10 hover:right-0 lg:right-0 xl:right-0"
 				>
+					<span></span>
 					Search
 				</button>
 			</div>
 
-			<div className="glow glow-1 z-10 bg-pink-400 absolute"></div>
-			<div className="glow glow-2 z-20 bg-purple-400 absolute"></div>
-			<div className="glow glow-3 z-30 bg-yellow-400 absolute"></div>
-			<div className="glow glow-4 z-40 bg-blue-400 absolute"></div>
+			<div className="glow glow-1 z-1 bg-bright-1 absolute"></div>
+			<div className="glow glow-2 z-2 bg-bright-2 absolute"></div>
+			<div className="glow glow-3 z-3 bg-bright-3 absolute"></div>
+			<div className="glow glow-4 z-4 bg-bright-4 absolute"></div>
 		</div>
 	);
 }
