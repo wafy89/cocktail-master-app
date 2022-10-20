@@ -11,40 +11,60 @@ import {
 	getFavoritesFromLocalstorage,
 	saveFavoritesToLocalstorage,
 } from './utils/helper';
+import { Store } from './utils/store';
 
 function App() {
-	const [favorite, setFavorite] = useState([]);
+	let drinks = JSON.parse(window.localStorage.getItem('favoriteDrinks'));
+
+	const [favorite, setFavorite] = useState(drinks);
+
+	const toggleFavorite = (drink) => {
+		if (favorite.some((item) => item.id === drink.id)) {
+			const newDrinks = favorite.filter((item) => item.id !== drink.id);
+			setFavorite(newDrinks);
+		} else {
+			setFavorite([...favorite, drink]);
+		}
+	};
+
+	const saveToStorage = () => {
+		const drinks = JSON.stringify(favorite);
+		window.localStorage.setItem('favoriteDrinks', drinks);
+	};
+
 	useEffect(() => {
-		setFavorite(getFavoritesFromLocalstorage());
-		return () => {
-			saveFavoritesToLocalstorage(favorite);
+		return function () {
+			console.log('done');
+			saveToStorage();
 		};
 	}, []);
 
 	return (
-		<div className="App bg-green-100/30">
-			<Navbar favoritesLength={favorite.length} />
-			<div className="min-h-screen  pt-2">
-				<Routes>
-					<Route
-						path="/"
-						element={<Home />}
-					/>
-					<Route
-						path="/details"
-						element={<Details />}
-					/>
-					<Route
-						path="favorite"
-						element={<Favorite drinks={favorite} />}
-					/>
-					<Route
-						path="result"
-						element={<SearchResult />}
-					/>
-				</Routes>
+		<Store.Provider value={{ favoriteList: favorite, toggleFavorite }}>
+			<div className="App bg-green-100/30">
+				<Navbar favoritesLength={favorite.length} />
+				<div className="min-h-screen  pt-2">
+					<Routes>
+						<Route
+							path="/"
+							element={<Home />}
+						/>
+						<Route
+							path="/details"
+							element={<Details />}
+						/>
+						<Route
+							path="favorite"
+							element={<Favorite drinks={favorite} />}
+						/>
+						<Route
+							path="result"
+							element={<SearchResult />}
+						/>
+					</Routes>
+				</div>
 			</div>
-		</div>
+		</Store.Provider>
 	);
 }
 

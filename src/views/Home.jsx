@@ -1,5 +1,6 @@
 import React from 'react';
-import Details from './Details';
+//import Details from './Details';
+import Card from '../components/Card';
 import { useState, useEffect } from 'react';
 import { cleanupDrinkData } from '../utils/helper';
 
@@ -65,14 +66,14 @@ const drinks = [
 function Home() {
 	const [drink, setDrink] = useState({});
 	useEffect(() => {
-		// const drink = cleanupDrinkData(drinks[0]);
+		const drink = cleanupDrinkData(drinks)[0];
 		setDrink(drink);
 	}, []);
 
 	return (
 		<div>
 			<h2>HOME</h2>
-			{/* <Details drink={drink} /> */}
+			<Card drink={drink} />
 		</div>
 	);
 }

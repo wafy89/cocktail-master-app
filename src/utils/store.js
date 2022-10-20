@@ -19,3 +19,9 @@
 // export const getFavoriteState = () => wrapFavoriteState(favoriveList);
 // export const accessFavoriteState = () =>
 // 	wrapFavoriteState(useHookstate(favoriveList));
+
+import React from 'react';
+
+const Store = React.createContext({});
+
+export { Store };

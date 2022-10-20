@@ -37,9 +37,21 @@ export const cleanupDrinkData = (drinkList) =>
 	}));
 
 export const saveFavoritesToLocalstorage = (drinks) => {
-	localStorage.setItem('favoriteDrinks', JSON.stringify(drinks));
+	console.log('saveLockal');
+	const value = JSON.stringify(drinks);
+	console.log({ value });
+	localStorage.setItem('favoriteDrinks', value);
 };
 
 export const getFavoritesFromLocalstorage = () => {
-	return JSON.parse(localStorage.getItem('favoriteDrinks'));
+	const favorits = JSON.parse(localStorage.getItem('favoriteDrinks'));
+	console.log({ getFav: favorits });
+	return favorits.length ? favorits : [];
+};
+export const isInFavorite = (array = [], id) => {
+	if (!array) {
+		return false;
+	} else {
+		return array.some((drink) => drink.id === id);
+	}
 };

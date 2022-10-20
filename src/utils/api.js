@@ -35,14 +35,6 @@ export function clearFavorites() {
 	this.setState({ favorites: [] });
 }
 
-export const isInFavorite = (array = [], id) => {
-	if (!array) {
-		return false;
-	} else {
-		return array.some((drink) => drink.idDrink === id);
-	}
-};
-
 export async function fetchData({ searchBy, searchText }) {
 	const baseUrls = {
 		i: 'https://www.thecocktaildb.com/api/json/v1/1/filter.php',

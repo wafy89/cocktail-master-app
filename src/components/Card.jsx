@@ -1,0 +1,98 @@
+import React, { useEffect } from 'react';
+import { Store } from '../utils/store';
+import { isInFavorite } from '../utils/helper';
+
+function Card({ drink }) {
+	const { favoriteList, toggleFavorite } = React.useContext(Store);
+	return (
+		<div>
+			<div className=" w-96 mx-auto rounded-md bg-gray-800 shadow-lg">
+				<div className="px-4 leading-none ">
+					<div className="flex justify-start gap-4 ">
+						<div
+							alt="pic"
+							className="w-2/3  bg-auto overflow-hidden bg-no-repeat bg-center  rounded-md shadow-2xl  transform -translate-y-4 border-4 border-gray-300"
+						>
+							<img
+								src={drink.thumbnail}
+								alt=""
+								className="block w-min"
+							/>
+						</div>
+						<ul className="text-start py-2 italic text-slate-200">
+							{drink.ingridients &&
+								drink.ingridients.map((item, i) => (
+									<li
+										key={i}
+										className="text-base"
+									>
+										{item.name}
+									</li>
+								))}
+						</ul>
+					</div>
+
+					<div className="flex-col text-gray-300">
+						<p className="pt-4 text-2xl font-bold">{drink.name}</p>
+						<hr
+							className="hr-text"
+							data-content=""
+						/>
+						<div className="text-md flex justify-between px-4 my-2">
+							<span className="font-bold">
+								ID: {drink.id} | {drink.drinkType}
+							</span>
+							<span className="font-bold"></span>
+						</div>
+						{/* <p className="hidden md:block px-4 my-4 text-sm text-left">
+							In Gotham City, mentally troubled comedian Arthur Fleck is
+							disregarded and mistreated by society. He then embarks on a
+							downward spiral of revolution and bloody crime. This path brings
+							him face-to-face with his alter-ego: the Joker.{' '}
+						</p> */}
+
+						<p className="flex text-md px-4 my-2">
+							{drink.category}
+							<span className="font-bold px-2">|</span>
+							{drink.glassType}
+						</p>
+
+						{/* <p>ICON BTNS</p> */}
+					</div>
+				</div>
+				<div className="flex justify-between items-center px-4 mb-4 w-full">
+					<svg
+						onClick={() => toggleFavorite(drink)}
+						className={`${
+							isInFavorite(favoriteList, drink.id)
+								? '  text-red-500 '
+								: '  text-gray-400 '
+						} h-12  p-2 svg-inline--fa fa-heart fa-w-16 fa-9x`}
+						aria-hidden="true"
+						focusable="false"
+						data-prefix="far"
+						data-icon="heart"
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 512 512"
+					>
+						<path
+							fill="currentColor"
+							d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"
+						></path>
+					</svg>
+					<div className="text-xs">
+						<button
+							type="button"
+							className="border border-gray-400 text-gray-400 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-900 focus:outline-none focus:shadow-outline"
+						>
+							DETAILS
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+export default Card;
