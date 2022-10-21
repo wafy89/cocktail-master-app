@@ -1,33 +1,22 @@
 import { cleanupDrinkData } from './helper';
-import { accessSearchResultState } from './store';
 import axios from 'axios';
 
 export async function getRandomCocktail() {
-	try {
-		let data;
-
-		const response = await fetch(
-			`https://www.thecocktaildb.com/api/json/v1/1/random.php`
-		);
-		data = await response.json();
-
-		return cleanupDrinkData(data)[0];
-	} catch (err) {
-		console.log('err', err);
-	}
+	const response = await axios.get(
+		`https://www.thecocktaildb.com/api/json/v1/1/random.php`
+	);
+	const res = response.data;
+	const data = cleanupDrinkData(res.drinks);
+	return data[0];
 }
 
-export async function getDataByID(id) {
-	try {
-		const response = await fetch(
-			`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
-		);
-		const data = await response.json();
-
-		return cleanupDrinkData(data)[0];
-	} catch (err) {
-		console.log('err', err);
-	}
+export async function getDrinkByID(id) {
+	const resp = await axios.get(
+		`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+	);
+	const res = resp.data;
+	const data = cleanupDrinkData(res.drinks);
+	return data[0];
 }
 
 export function clearFavorites() {
@@ -46,15 +35,5 @@ export async function fetchData({ searchBy, searchText }) {
 	const resp = await axios.get(uri);
 	const res = resp.data;
 	data = cleanupDrinkData(res.drinks);
-
-	// await fetch(url)
-	// 	.then(async (res) => {
-	// 		const data = await res.json();
-	// 		console.log(data.data);
-	// 		// const response = await res.json();
-	// 		// console.log({ response });
-	// 		// data = cleanupDrinkData(response);
-	// 	})
-	// 	.catch((e) => console.log({ e }));
 	return data;
 }

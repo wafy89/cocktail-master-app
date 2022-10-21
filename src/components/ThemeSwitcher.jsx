@@ -4,39 +4,39 @@ const themes = [
 	{
 		name: 'theme-first',
 		colors: [
-			'#1e293b',
-			'#e2e8f0',
-			'#C5CEAE',
-			'#F4EBC3',
-			'#99173C',
-			'#F0E2A4',
-			'#AB526B',
-			'#80BCA3',
+			'#151614',
+			'#F7F7F7',
+			'#EFEFEF',
+			'#646E78',
+			'#685F74',
+			'#3C383E',
+			'#AEB3B8',
+			'#685F74',
 		],
 	},
 	{
 		name: 'theme-second',
 		colors: [
-			'#667f64',
-			'#929538',
-			'#e2da94',
-			'#e1d0a1',
-			'#ffae92',
-			'#fd962d',
-			'#edb7b6',
+			'#7d8ab6',
+			'#5792c9ec',
+			'#d6d196',
+			'#7d8ab6',
+			'#aab8b9',
+			'#c6dbe4',
+			'#9b5427',
 			'#facd00',
 		],
 	},
 	{
 		name: 'theme-third',
 		colors: [
-			'#166534',
-			'#bbf7d0',
-			'#FEE1C7',
+			'#ee96af',
+			'#fa6194',
+			'#dba9df',
 			'#B5A886',
 			'#F44174',
-			'#FA7E61',
-			'#4C1E4F',
+			'#ee96af',
+			'#FEE1C7',
 			'#044a5c',
 		],
 	},
@@ -63,7 +63,6 @@ export default function ThemeSwitcher({ setTheme }) {
 	const changeTheme = (themeName) => {
 		setExpand(false);
 		setTheme(themeName);
-		console.log(themeName);
 	};
 	return (
 		<div className="w-full relative">
@@ -76,7 +75,7 @@ export default function ThemeSwitcher({ setTheme }) {
 				/>
 			</div>
 			{expand && (
-				<div className=" bg-white rounded-md  p-2 absolute top-8 right-0">
+				<div className=" bg-white rounded-md z-50 p-2 absolute top-8 right-0">
 					{themes.map((theme) => (
 						<Theme
 							key={theme.name}

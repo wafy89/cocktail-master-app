@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Store } from '../utils/store';
 import { isInFavorite } from '../utils/helper';
+import { useNavigate } from 'react-router-dom';
 
 function Card({ drink }) {
+	const navigate = useNavigate();
 	const { favoriteList, toggleFavorite } = React.useContext(Store);
 	return (
 		<div className="m-4">
@@ -44,12 +46,7 @@ function Card({ drink }) {
 							</span>
 							<span className="font-bold"></span>
 						</div>
-						{/* <p className="hidden md:block px-4 my-4 text-sm text-left">
-							In Gotham City, mentally troubled comedian Arthur Fleck is
-							disregarded and mistreated by society. He then embarks on a
-							downward spiral of revolution and bloody crime. This path brings
-							him face-to-face with his alter-ego: the Joker.{' '}
-						</p> */}
+
 						{drink.category && (
 							<p className="flex text-md px-4 my-2">
 								{drink.category}
@@ -57,8 +54,6 @@ function Card({ drink }) {
 								{drink.glassType}
 							</p>
 						)}
-
-						{/* <p>ICON BTNS</p> */}
 					</div>
 				</div>
 				<div className="flex justify-between items-center px-4 mb-4  w-full">
@@ -86,6 +81,7 @@ function Card({ drink }) {
 						<button
 							type="button"
 							className="border border-slate-800 text-slate-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-slate-400 focus:outline-none focus:shadow-outline"
+							onClick={() => navigate(`/details/${drink.id}`)}
 						>
 							DETAILS
 						</button>

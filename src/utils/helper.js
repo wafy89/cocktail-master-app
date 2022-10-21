@@ -1,7 +1,7 @@
 const getIngridients = (drink) => {
 	let ingridientsArray = [];
 	for (let index = 1; index < 11; index++) {
-		const ingridientKey = `strIngredient${index}`;
+		const ingridientKey = `strIngredient${index}`.trim();
 		const measureKey = `strMeasure${index}`;
 		if (!drink[ingridientKey]) break;
 		ingridientsArray.push({
@@ -36,18 +36,15 @@ export const cleanupDrinkData = (drinkList) =>
 		videoUrl: drink.strVideo,
 	}));
 
-export const saveFavoritesToLocalstorage = (drinks) => {
-	console.log('saveLockal');
-	const value = JSON.stringify(drinks);
-	console.log({ value });
-	localStorage.setItem('favoriteDrinks', value);
-};
+// export const saveFavoritesToLocalstorage = (drinks) => {
+// 	const value = JSON.stringify(drinks);
+// 	localStorage.setItem('favoriteDrinks', value);
+// };
 
-export const getFavoritesFromLocalstorage = () => {
-	const favorits = JSON.parse(localStorage.getItem('favoriteDrinks'));
-	console.log({ getFav: favorits });
-	return favorits.length ? favorits : [];
-};
+// export const getFavoritesFromLocalstorage = () => {
+// 	const favorits = JSON.parse(localStorage.getItem('favoriteDrinks'));
+// 	return favorits.length ? favorits : [];
+// };
 export const isInFavorite = (array = [], id) => {
 	if (!array) {
 		return false;

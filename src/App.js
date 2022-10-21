@@ -6,11 +6,9 @@ import SearchResult from './views/SearchResult';
 import Home from './views/Home';
 import Navbar from './views/Navbar';
 import Details from './views/Details';
+import Random from './views/Random';
 import { useEffect, useState } from 'react';
-import {
-	getFavoritesFromLocalstorage,
-	saveFavoritesToLocalstorage,
-} from './utils/helper';
+import { getRandomCocktail } from './utils/api';
 import { Store } from './utils/store';
 function App() {
 	//initialize favorite state with local Storage value
@@ -29,7 +27,6 @@ function App() {
 
 	const saveToStorage = () => {
 		const drinks = JSON.stringify(favorite);
-		console.log('saveToStorage', drinks);
 		window.localStorage.setItem('favoriteDrinks', drinks);
 	};
 	// save to lockal Storage with every change on favorites
@@ -40,26 +37,42 @@ function App() {
 	//App theme
 	const [theme, setTheme] = useState('theme-first');
 
+	// Randoms
+	const [randoms, setRandoms] = useState([]);
+	const getRandom = async () => {
+		const RandomCocktail = await getRandomCocktail();
+		setRandoms([RandomCocktail, ...randoms]);
+	};
 	return (
 		<Store.Provider value={{ favoriteList: favorite, toggleFavorite }}>
 			<div className={`${theme} 'App bg-secondary`}>
 				<Navbar
 					setTheme={setTheme}
 					favoritesLength={favorite.length}
+					getRandom={getRandom}
 				/>
-				<div className="min-h-screen  pt-44 md:pt-28">
+				<div className="min-h-screen  pt-48 md:pt-32">
 					<Routes>
 						<Route
 							path="/"
 							element={<Home />}
 						/>
 						<Route
-							path="/details"
+							path="/details/:id"
 							element={<Details />}
 						/>
 						<Route
 							path="favorite"
 							element={<Favorite drinks={favorite} />}
+						/>
+						<Route
+							path="randoms"
+							element={
+								<Random
+									drinks={randoms}
+									setRandoms={setRandoms}
+								/>
+							}
 						/>
 						<Route
 							path="result"

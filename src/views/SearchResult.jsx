@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Grid from '../components/Grid';
+import PageHeader from '../components/PageHeader';
 
 import { fetchData } from '../utils/api';
 function SearchResult() {
@@ -15,17 +16,8 @@ function SearchResult() {
 	}, [searchParams]);
 	return (
 		<div>
-			result
+			<PageHeader title={'Search Result'} />
 			<Grid drinks={drinkList} />
-			{/* <div className="flex justify-around gap-6 w-full flex-wrap">
-				{drinkList?.length &&
-					drinkList.map((item) => (
-						<Card
-							key={item.id}
-							drink={item}
-						/>
-					))}
-			</div> */}
 		</div>
 	);
 }

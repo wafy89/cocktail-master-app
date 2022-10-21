@@ -24,15 +24,15 @@ function SearchBar() {
 					handelSearch();
 				}
 			}}
-			className="overflow-hidden  z-0 rounded-full w-full relative p-2 flex-grow-1 max-w-xl mx-auto"
+			className="overflow-hidden  z-0 rounded-full w-full relative p-2 "
 		>
 			<div className="relative flex z-40 overflow-hidden bg-primary rounded-full">
 				<select
-					className="bg-transparent rounded-full z-1 transform ease-linear duration-200 h-full hover:bg-slate-500/30 hover:shadow-md outline-none  text-slate-700  font-semibold absolute -left-28 hover:left-0 lg:left-0 xl:left-0 mr-1 pr-1"
+					className="  bg-bright-1 rounded-full w-28 text-white  z-1 transform ease-linear duration-200 h-full  hover:to-bright-1 outline-none appearance-none  font-semibold absolute -left-0 hover:left-0 md:left-0 lg:left-0 xl:left-0 mr-1 pr-1 text-center"
 					onChange={(evt) => setSearchBy(evt.target.value)}
 					value={searchBy}
 				>
-					<option value="s">By Cocktail Name</option>
+					<option value="s">By Name</option>
 					<option value="i">By Ingredient</option>
 				</select>
 				<input
@@ -45,13 +45,12 @@ function SearchBar() {
 				/>
 				<button
 					onClick={handelSearch}
-					className="bg-bright-1 text-white z-50 transform ease-linear duration-200 rounded-full font-semibold px-8 py-4  absolute -right-10 hover:right-0 lg:right-0 xl:right-0"
+					className="bg-bright-1 w-28 text-white z-50 transform ease-linear duration-200 rounded-full font-semibold px-8 py-4  absolute -right-0 "
 				>
 					<span></span>
 					Search
 				</button>
 			</div>
-
 			<div className="glow glow-1 z-1 bg-bright-1 absolute"></div>
 			<div className="glow glow-2 z-2 bg-bright-2 absolute"></div>
 			<div className="glow glow-3 z-3 bg-bright-3 absolute"></div>
