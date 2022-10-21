@@ -1,63 +1,45 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import DrinkDetails from '../components/DrinkDetails';
-import LanguageSwitcher from '../components/LanguageSwitcher';
 import PageHeader from '../components/PageHeader';
-const drink = {
-	id: '12322',
-	name: 'Strawberry Margarita',
-	category: 'Ordinary Drink',
-	drinkType: 'Alcoholic',
-	glassType: 'Cocktail glass',
-	instructions: {
-		en: 'Rub rim of cocktail glass with lemon juice and dip rim in salt. Shake schnapps, tequila, triple sec, lemon juice, and strawberries with ice, strain into the salt-rimmed glass, and serve.',
-		de: 'Cocktailglasrand mit Zitronensaft und Tauchrand in Salz wenden. Schnaps, Tequila, Triple-Sec, Zitronensaft und Erdbeeren mit Eis schütteln, in das salzige Glas sieben und servieren.',
-		it: 'Strofinare il bordo del bicchiere da cocktail con succo di limone e immergerlo nel sale. Shakerare grappa, tequila, triple sec, succo di limone e fragole con ghiaccio, filtrare nel bicchiere bordato di sale e servire.',
-	},
-	thumbnail:
-		'https://www.thecocktaildb.com/images/media/drink/tqyrpw1439905311.jpg',
-	ingridients: [
-		{
-			name: 'Strawberry schnapps',
-			measure: '1/2 oz ',
-			image:
-				'https://www.thecocktaildb.com/images/ingredients/Strawberry schnapps.png',
-		},
-		{
-			name: 'Tequila',
-			measure: '1 oz ',
-			image: 'https://www.thecocktaildb.com/images/ingredients/Tequila.png',
-		},
-		{
-			name: 'Triple sec',
-			measure: '1/2 oz ',
-			image: 'https://www.thecocktaildb.com/images/ingredients/Triple sec.png',
-		},
-		{
-			name: 'Lemon juice',
-			measure: '1 oz ',
-			image: 'https://www.thecocktaildb.com/images/ingredients/Lemon juice.png',
-		},
-		{
-			name: 'Strawberries',
-			measure: '1 oz ',
-			image:
-				'https://www.thecocktaildb.com/images/ingredients/Strawberries.png',
-		},
-		{
-			name: 'Salt',
-			measure: null,
-			image: 'https://www.thecocktaildb.com/images/ingredients/Salt.png',
-		},
-	],
-	videoUrl: null,
-};
+import Hero from '../images/hero.png';
+
 function Home() {
 	return (
-		<div className=" ">
+		<div className=" relative overflow-hidden">
 			<PageHeader title="HOME" />
-			{/* <LanguageSwitcher /> */}
-			<DrinkDetails drink={drink} />
+			<div className="flex justify-center ">
+				<main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+					<div className="sm:text-center lg:text-left z-20">
+						<h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+							<span className="block xl:inline text-bright-4">Welcome to </span>{' '}
+							<span className="block text-bright-2 xl:inline">
+								COCKTAIL MASTER
+							</span>
+						</h1>
+						<p className="mt-3  text-bright-4 text-xl sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+							Here you deffenitly can enjoy your party making best drinks.
+						</p>
+						<div className="block text-4xl text-primary xl:inline">How?</div>
+						<ol className="mt-3 text-base text-slate-800 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+							<li>1- Search for a Drink by name or by Ingridient</li>
+							<li>2- Click Details Button on one of the Results</li>
+							<li>
+								3- Read the Ingridient and Instructions with different Languages
+							</li>
+							<li>
+								4- and if you like it click on Heart to save it to{' '}
+								<span className="text-bright-2 font-bold">Favorites</span>{' '}
+							</li>
+						</ol>
+					</div>
+				</main>
+				<div className=" w-full max-h-screen md:w-1/2">
+					<img
+						className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
+						src={Hero}
+						alt=""
+					/>
+				</div>
+			</div>
 		</div>
 	);
 }
