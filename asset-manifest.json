@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/cocktail-master-app/static/css/main.ae8ee1eb.css",
-    "main.js": "/cocktail-master-app/static/js/main.378532cf.js",
+    "main.js": "/cocktail-master-app/static/js/main.c1f95691.js",
     "static/js/787.05968eaa.chunk.js": "/cocktail-master-app/static/js/787.05968eaa.chunk.js",
     "static/media/hero.png": "/cocktail-master-app/static/media/hero.c4422bf720311c47316b.png",
     "static/media/logo.png": "/cocktail-master-app/static/media/logo.57ac4f7f4395f2b0a428.png",
     "static/media/color.svg": "/cocktail-master-app/static/media/color.ebb34510afc602c3f8abede27987a70f.svg",
     "index.html": "/cocktail-master-app/index.html",
     "main.ae8ee1eb.css.map": "/cocktail-master-app/static/css/main.ae8ee1eb.css.map",
-    "main.378532cf.js.map": "/cocktail-master-app/static/js/main.378532cf.js.map",
+    "main.c1f95691.js.map": "/cocktail-master-app/static/js/main.c1f95691.js.map",
     "787.05968eaa.chunk.js.map": "/cocktail-master-app/static/js/787.05968eaa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ae8ee1eb.css",
-    "static/js/main.378532cf.js"
+    "static/js/main.c1f95691.js"
   ]
 }
