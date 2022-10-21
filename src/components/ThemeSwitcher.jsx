@@ -48,10 +48,10 @@ function Theme({ theme, changeTheme }) {
 			className=" py-1 w-32 px-3 rounded-md hover:bg-slate-200"
 			onClick={() => changeTheme(theme.name)}
 		>
-			{theme.colors.map((color) => (
+			{theme.colors.map((color, i) => (
 				<span
 					style={{ backgroundColor: color }}
-					key={color}
+					key={i}
 					className="inline-block items-center mt-1 -ml-1 w-4 h-4 rounded-full "
 				></span>
 			))}
