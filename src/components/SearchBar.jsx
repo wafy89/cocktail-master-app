@@ -3,7 +3,7 @@ import { useState } from 'react';
 //import { fetchData } from '../utils/api';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { AiOutlineSearch } from 'react-icons/ai';
 function SearchBar() {
 	let navigate = useNavigate();
 
@@ -26,9 +26,9 @@ function SearchBar() {
 			}}
 			className="overflow-hidden  z-0 rounded-full w-full relative p-2 "
 		>
-			<div className="relative flex z-40 overflow-hidden bg-primary rounded-full">
+			<div className="relative justify-between  flex items-stretch z-40 overflow-hidden bg-primary rounded-full">
 				<select
-					className="  bg-bright-1 rounded-full w-28 text-white  z-1 transform ease-linear duration-200 h-full  hover:to-bright-1 outline-none appearance-none  font-semibold absolute -left-0 hover:left-0 md:left-0 lg:left-0 xl:left-0 mr-1 pr-1 text-center"
+					className=" bg-bright-1 rounded-full w-28 text-white py-2 z-1  h-full outline-none appearance-none  font-semibold text-center"
 					onChange={(evt) => setSearchBy(evt.target.value)}
 					value={searchBy}
 				>
@@ -41,13 +41,12 @@ function SearchBar() {
 					required
 					type="text"
 					placeholder="enter your search "
-					className="rounded-full flex-1 px-6  bg-primary py-4 text-gray-700 focus:outline-none text-center"
+					className="rounded-full   bg-primary py-2 text-gray-700 focus:outline-none text-center"
 				/>
 				<button
 					onClick={handelSearch}
-					className="bg-bright-1 w-28 text-white z-50 transform ease-linear duration-200 rounded-full font-semibold px-8 py-4  absolute -right-0 "
+					className="bg-bright-1 inline-block w-28 text-white py-2 px-4 rounded-full font-semibold "
 				>
-					<span></span>
 					Search
 				</button>
 			</div>

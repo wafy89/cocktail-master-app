@@ -51,7 +51,7 @@ function App() {
 					favoritesLength={favorite.length}
 					getRandom={getRandom}
 				/>
-				<div className="min-h-screen  pt-48 md:pt-32">
+				<div className="min-h-screen  pt-40 md:pt-24">
 					<Routes>
 						<Route
 							path="/"
