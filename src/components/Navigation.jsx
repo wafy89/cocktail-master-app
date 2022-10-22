@@ -15,7 +15,7 @@ function Navigation({ getRandom, favoritesLength, setTheme }) {
 		});
 	};
 	return (
-		<ul className=" overflow-hidden flex w-full items-end justify-between gap-8 flex-nowrap md:ml-8">
+		<ul className="  flex w-full items-end justify-between min-w-fit gap-4 flex-nowrap md:mx-8">
 			<li className="">
 				<Link to={`/`}>
 					<FaCocktail
