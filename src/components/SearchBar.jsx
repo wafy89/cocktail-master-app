@@ -1,9 +1,7 @@
 import '../styles/searchBar.css';
 import { useState } from 'react';
-//import { fetchData } from '../utils/api';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AiOutlineSearch } from 'react-icons/ai';
 function SearchBar() {
 	let navigate = useNavigate();
 
@@ -24,28 +22,31 @@ function SearchBar() {
 					handelSearch();
 				}
 			}}
-			className="overflow-hidden  z-0 rounded-full w-full relative p-2 "
+			className="overflow-hidden max-w-full z-0 rounded-full w-full relative p-2 "
 		>
-			<div className="relative justify-between  flex items-stretch z-40 overflow-hidden bg-primary rounded-full">
+			<div className="relative flex justify-between max-w-full  items-stretch z-40 overflow-hidden bg-primary rounded-full">
 				<select
-					className=" bg-bright-1 rounded-full w-28 text-white py-2 z-1  h-full outline-none appearance-none  font-semibold text-center"
+					className=" bg-bright-1 inline-block rounded-full w-28 text-white py-2 z-1  h-full outline-none appearance-none  font-semibold text-center"
 					onChange={(evt) => setSearchBy(evt.target.value)}
 					value={searchBy}
 				>
 					<option value="s">By Name</option>
 					<option value="i">By Ingredient</option>
 				</select>
-				<input
-					onChange={(evt) => setSearchText(evt.target.value)}
-					value={searchText}
-					required
-					type="text"
-					placeholder="enter your search "
-					className="rounded-full   bg-primary py-2 text-gray-700 focus:outline-none text-center"
-				/>
+				<div className="rounded-full py-2">
+					<input
+						onChange={(evt) => setSearchText(evt.target.value)}
+						value={searchText}
+						required
+						type="text"
+						placeholder="enter your search "
+						className="w-full bg-primary text-center focus:outline-none  text-gray-700  "
+					/>
+				</div>
+
 				<button
 					onClick={handelSearch}
-					className="bg-bright-1 inline-block w-28 text-white py-2 px-4 rounded-full font-semibold "
+					className="bg-bright-1 w-28 text-white py-2 px-4 rounded-full font-semibold "
 				>
 					Search
 				</button>

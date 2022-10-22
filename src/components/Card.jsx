@@ -8,7 +8,7 @@ function Card({ drink }) {
 	const navigate = useNavigate();
 	const { favoriteList, toggleFavorite } = React.useContext(Store);
 	return (
-		<div className="m-4">
+		<div className="m-4 max-w-full">
 			<div className=" w-96 h-[28rem] mx-auto rounded-md bg-primary shadow-lg flex flex-col justify-between">
 				<div className="px-4 leading-none ">
 					<div className="flex justify-start gap-4 ">

@@ -15,12 +15,12 @@ function Navigation({ getRandom, favoritesLength, setTheme }) {
 		});
 	};
 	return (
-		<ul className=" flex items-end justify-between gap-8 flex-nowrap md:ml-8">
+		<ul className=" overflow-hidden flex w-full items-end justify-between gap-8 flex-nowrap md:ml-8">
 			<li className="">
 				<Link to={`/`}>
 					<FaCocktail
 						fontSize={48}
-						className="text-slate-600 hover:text-green-600 mb-1"
+						className="text-slate-600 mb-1"
 					/>
 				</Link>
 			</li>
@@ -31,22 +31,22 @@ function Navigation({ getRandom, favoritesLength, setTheme }) {
 					</div>
 					<AiFillHeart
 						fontSize={48}
-						className="text-slate-600 hover:text-red-600"
+						className="text-slate-600"
 					/>
 				</Link>
 			</li>
 			<li className="">
 				<div
-					className=""
+					className=" cursor-pointer"
 					onClick={() => handelRandom()}
 				>
 					<GiPerspectiveDiceSixFacesRandom
 						fontSize={48}
-						className="text-slate-600 hover:text-sky-400"
+						className="text-slate-600"
 					/>
 				</div>
 			</li>
-			<li className=" w-10 relative  mb-1 ">
+			<li className=" cursor-pointer w-10 relative  mb-1 ">
 				<ThemeSwitcher setTheme={setTheme} />
 			</li>
 		</ul>

@@ -45,7 +45,7 @@ function App() {
 	};
 	return (
 		<Store.Provider value={{ favoriteList: favorite, toggleFavorite }}>
-			<div className={`${theme} 'App bg-secondary`}>
+			<div className={`${theme} App bg-secondary w-full`}>
 				<Navbar
 					setTheme={setTheme}
 					favoritesLength={favorite.length}

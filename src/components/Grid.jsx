@@ -3,7 +3,7 @@ import Card from './Card';
 
 function Grid({ drinks }) {
 	return (
-		<div className="flex justify-around gap-6 w-full flex-wrap">
+		<div className="flex justify-around gap-6 w-full  px-auto flex-wrap">
 			{drinks?.length
 				? drinks.map((item) => (
 						<Card

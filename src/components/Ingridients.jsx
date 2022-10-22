@@ -6,9 +6,8 @@ function Ingridients({ ingridients }) {
 		<ul className="text-start relative w-full py-2 italic text-slate-800">
 			{ingridients &&
 				ingridients.map((item, i) => (
-					<>
+					<div key={i}>
 						<li
-							key={i}
 							className={`text-base flex rounded-md justify-between items-center h-8`}
 						>
 							<b className=" w-1/3 flex justify-start">{item.measure}</b>
@@ -31,7 +30,7 @@ function Ingridients({ ingridients }) {
 							</div>
 						</li>
 						<hr className="w-full h-1 bg-secondary rounded" />
-					</>
+					</div>
 				))}
 			{showImage && (
 				<div className="absolute block w-44 top-0 right-16">
