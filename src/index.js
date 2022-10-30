@@ -8,7 +8,11 @@ import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<BrowserRouter basename="/cocktail-master-app">
+		<BrowserRouter
+			basename={
+				process.env.NODE_ENV === 'production' ? '/cocktail-master-app' : ''
+			}
+		>
 			<App />
 		</BrowserRouter>
 	</React.StrictMode>

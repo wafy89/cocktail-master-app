@@ -25,13 +25,10 @@ function App() {
 		}
 	};
 
-	const saveToStorage = () => {
-		const drinks = JSON.stringify(favorite);
-		window.localStorage.setItem('favoriteDrinks', drinks);
-	};
 	// save to lockal Storage with every change on favorites
 	useEffect(() => {
-		saveToStorage();
+		const drinks = JSON.stringify(favorite);
+		window.localStorage.setItem('favoriteDrinks', drinks);
 	}, [favorite]);
 
 	//App theme
@@ -53,31 +50,14 @@ function App() {
 				/>
 				<div className="min-h-screen  pt-40 md:pt-24">
 					<Routes>
-						<Route
-							path="/"
-							element={<Home />}
-						/>
-						<Route
-							path="/details/:id"
-							element={<Details />}
-						/>
-						<Route
-							path="favorite"
-							element={<Favorite drinks={favorite} />}
-						/>
+						<Route path="/" element={<Home />} />
+						<Route path="/details/:id" element={<Details />} />
+						<Route path="favorite" element={<Favorite drinks={favorite} />} />
 						<Route
 							path="randoms"
-							element={
-								<Random
-									drinks={randoms}
-									setRandoms={setRandoms}
-								/>
-							}
+							element={<Random drinks={randoms} setRandoms={setRandoms} />}
 						/>
-						<Route
-							path="result"
-							element={<SearchResult />}
-						/>
+						<Route path="result" element={<SearchResult />} />
 					</Routes>
 				</div>
 			</div>

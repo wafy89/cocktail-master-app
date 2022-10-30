@@ -37,6 +37,7 @@ function Ingridients({ ingridients }) {
 					<img
 						src={showImage}
 						className=" block w-full top-0"
+						alt="ingridient"
 					/>
 				</div>
 			)}

@@ -76,6 +76,7 @@ function DrinkDetails({ drink }) {
 									<a
 										href={drink.videoUrl}
 										target="_blank"
+										rel="noreferrer"
 									>
 										<BsYoutube
 											size={48}
